@@ -1,15 +1,14 @@
 'use strict';
 
 /**
- * Class that responsible for mathematical equations 
+ * Class that responsible for mathematical equations.
  *
  * @constructor
  */
 function SplitterMath() {
   /**
-   * Calculate position of slider button which don't equal 
+   * Calculate position of slider button which don't equal.
    * position of image
-   * 
    * @param   {Number} cursorPos   Cursor position
    * @param   {Number} sliderWidth Slider width
    * @returns {Number} Slider button position
@@ -21,8 +20,7 @@ function SplitterMath() {
   };
 
   /**
-   * Check that point is in a segment
-   * 
+   * Check that point is in a segment.
    * @param   {Number} firstPointOfSegment  Cordinate of first point of a segment 
    * @param   {Number} secondPointOfSegment Cordinate of second point of a segment
    * @param   {Number} point                Cordinate of a point

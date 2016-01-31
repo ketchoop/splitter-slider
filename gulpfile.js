@@ -74,8 +74,7 @@ function browserifyBundle() {
   var browerifyBundle = browserify(paths.js.from, {
     debug: true
   }).transform(babelify, {
-    presets: ['es2015'],
-    plugins: ["transform-object-assign"]
+    presets: ['es2015']
   });
 
   return browerifyBundle.bundle().on('error', logger)
