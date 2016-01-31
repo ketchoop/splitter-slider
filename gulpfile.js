@@ -33,7 +33,7 @@ var gulp = require('gulp'),
 gulp.task('css', function () {
   gulp.src(paths.css.from)
     .pipe(sass({
-        inclidePath: './development/css/'
+        includePath: './development/css/'
       })
       .on("error", sass.logError))
     .pipe(autopref())
@@ -61,7 +61,7 @@ gulp.task('jscs', function () {
 });
 
 gulp.task('jsdoc', function () {
-  var jsDocConf = require('./jsdocConf.json');
+  var jsDocConf = require('./jsdoc_conf.json');
   
   return gulp.src(`${paths.js.folder}*`, {read: false})
     .pipe(jsdoc());
