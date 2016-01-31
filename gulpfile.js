@@ -1,13 +1,8 @@
 'use strict';
 
 var gulp = require('gulp'),
-  babel = require('gulp-babel'),
-  sass = require('gulp-sass'),
-  mincss = require('gulp-minify-css'),
-  autopref = require('gulp-autoprefixer'),
   uglify = require('gulp-uglify'),
   browserify = require('browserify'),
-  shim = require('browserify-shim'),
   babelify = require('babelify'),
   source = require('vinyl-source-stream'),
   jshint = require('gulp-jshint'),
