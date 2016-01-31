@@ -28,7 +28,7 @@ var gulp = require('gulp'),
   };
 
 gulp.task('css', function () {
-  gulp.src(paths.css.from)
+  return gulp.src(paths.css.from)
     .pipe(gulp.dest(paths.css.to));
 });
 

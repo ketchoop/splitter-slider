@@ -4,7 +4,7 @@
   "description": "Slider that can controles width of two splitted images",
   "main": "./app/assets/js/Splitter.js",
   "scripts": {
-    "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls.js"
+    "coveralls": "cat ./coverage/lcov.info | coveralls"
   },
   "repository": {
     "type": "git",
