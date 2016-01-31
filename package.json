@@ -1,0 +1,41 @@
+{
+  "name": "splitter-slider",
+  "version": "0.1.0",
+  "description": "Slider that can controles width of two splitted images",
+  "main": "./app/assets/js/Splitter.js",
+  "scripts": {
+    "test": "mocha",
+    "cover": "istanbul cover ./node_modules/mocha/bin/_mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ket4yii/Splitter-Slider.git"
+  },
+  "keywords": [
+    "splitter",
+    "slider",
+    "images"
+  ],
+  "author": "Alexey Boyko <ket4yiit@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ket4yii/Splitter-Slider/issues"
+  },
+  "homepage": "https://github.com/ket4yii/Splitter-Slider#readme",
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "gulp": "^3.9.0",
+    "gulp-jscpd": "0.0.6",
+    "gulp-jscs": "^3.0.2",
+    "gulp-jsdoc3": "^0.1.1",
+    "gulp-jshint": "^2.0.0",
+    "istanbul": "^0.4.2",
+    "jsdom": "^7.2.2",
+    "jsdomify": "^1.1.0",
+    "jshint": "^2.9.1",
+    "jshint-stylish": "^2.1.0",
+    "mocha": "^2.3.4",
+    "mocha-jsdom": "^1.0.0",
+    "sinon": "^1.17.2"
+  }
+}

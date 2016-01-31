@@ -1,0 +1,20 @@
+{
+  "maxerr": 15,
+  
+  "strict": "global",
+  
+  "undef": true,
+  "unused": true,
+  "nonew": true,
+  "notypeof": false,
+  "shadow": false,
+  "boss": false,
+  "eqnull": false,
+  "sub": false,
+  "validthis": false,
+  "withstmt": false,
+  
+  "browser": true,
+  "browserify": true,
+  "mocha": true
+}
