@@ -1,8 +1,13 @@
 'use strict';
 
 var gulp = require('gulp'),
+  babel = require('gulp-babel'),
+  sass = require('gulp-sass'),
+  mincss = require('gulp-minify-css'),
+  autopref = require('gulp-autoprefixer'),
   uglify = require('gulp-uglify'),
   browserify = require('browserify'),
+  shim = require('browserify-shim'),
   babelify = require('babelify'),
   source = require('vinyl-source-stream'),
   jshint = require('gulp-jshint'),
@@ -27,6 +32,11 @@ var gulp = require('gulp'),
 
 gulp.task('css', function () {
   gulp.src(paths.css.from)
+    .pipe(sass({
+        includePath: './development/css/'
+      })
+      .on("error", sass.logError))
+    .pipe(autopref())
     .pipe(gulp.dest(paths.css.to));
 });
 
@@ -51,7 +61,7 @@ gulp.task('jscs', function () {
 });
 
 gulp.task('jsdoc', function () {
-  var jsDocConf = require('./jsdoc_conf.json');
+  var jsDocConf = require('./jsdocConf.json');
   
   return gulp.src(`${paths.js.folder}*`, {read: false})
     .pipe(jsdoc());
