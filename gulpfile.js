@@ -5,6 +5,8 @@ var gulp = require('gulp'),
   browserify = require('browserify'),
   babelify = require('babelify'),
   source = require('vinyl-source-stream'),
+  mocha = require('gulp-mocha'),
+  istanbul = require('gulp-istanbul'),
   jshint = require('gulp-jshint'),
   jscpd = require('gulp-jscpd'),
   jscs = require('gulp-jscs'),
@@ -55,6 +57,19 @@ gulp.task('jsdoc', function () {
   
   return gulp.src(`${paths.js.folder}*`, {read: false})
     .pipe(jsdoc());
+});
+
+gulp.task('before-test', function () {
+  return gulp.src(`${paths.js.folder}*`)
+    .pipe(istanbul())
+    .pipe(istanbul.hookRequire());
+});
+
+gulp.task('test', ['before-test'],function () {
+  return gulp.src('./test/*')
+    .pipe(mocha())
+    .pipe(istanbul.writeReports())
+    .pipe(istanbul.enforceThresholds({ thresholds: { global: 60 }}));
 });
 
 gulp.task('js', ['lint', 'jscpd', 'jscs'], function () {

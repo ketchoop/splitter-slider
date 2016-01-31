@@ -7,3 +7,5 @@ before_script:
 
 script:
   - gulp build
+after_success:
+  - npm run coveralls
