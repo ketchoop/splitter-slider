@@ -77,7 +77,7 @@ gulp.task('js', ['lint', 'jscpd', 'jscs'], function () {
     .pipe(gulp.dest(paths.js.to));
 });
 
-gulp.task('build', ['lint', 'jscpd', 'jscs', 'js', 'css', 'jsdoc']);
+gulp.task('build', ['lint', 'jscpd', 'jscs', 'test', 'js', 'css', 'jsdoc']);
 
 gulp.task('default', ['js', 'css']);
 
