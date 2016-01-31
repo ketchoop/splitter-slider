@@ -27,11 +27,6 @@ var gulp = require('gulp'),
 
 gulp.task('css', function () {
   gulp.src(paths.css.from)
-    .pipe(sass({
-        includePath: './development/css/'
-      })
-      .on("error", sass.logError))
-    .pipe(autopref())
     .pipe(gulp.dest(paths.css.to));
 });
 
