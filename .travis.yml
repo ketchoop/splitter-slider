@@ -15,5 +15,6 @@ after_success:
 - cd ../for_deploy
 - git init
 - git remote add deploy https://ket4yii:${GH_TOKEN}@github.com/ket4yii/Splitter-Slider.git
-- git checkout gh-pages
+- git pull origin gh-pages
+- ls
 #- git push deploy gh-pages
