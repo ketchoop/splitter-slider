@@ -9,10 +9,9 @@ script:
   - gulp build
 after_success:
   - npm run coveralls
-  - cp ./docs ../test
-  - cd ../test
+  - git checkout gh-pages docs
   - eval "$(ssh-agent -s)"
-  - chmod 600 .travis/deploy_key.pem #
+  - chmod 600 .travis/deploy_key.pem 
   - ssh-add .travis/deploy_key.pem
   - git remote add deploy https://github.com/ket4yii/Splitter-Slider.git 
   - git push deploy gh-pages

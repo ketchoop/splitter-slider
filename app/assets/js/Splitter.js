@@ -23,7 +23,7 @@ function Splitter(container) {
   /**
    * Create slider container with a button into.
    * @inner
-   * @returns {object} DOMObject of container with slider into.
+   * @returns {object} DOMObject of container with a slider into.
    */
   function createSliderContainer() {
     var sliderBtn = document.createElement('div'),
