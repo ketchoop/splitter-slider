@@ -9,6 +9,7 @@ before_script:
 script:
 - gulp build
 after_success:
+- git branch
 - npm run coveralls
 - git checkout gh-pages docs
 - eval "$(ssh-agent -s)"
