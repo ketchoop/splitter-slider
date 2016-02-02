@@ -3,5 +3,3 @@
 
 Splitter-Slider
 ===============
-
-
