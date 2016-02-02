@@ -2,8 +2,6 @@
 
 var SplitterMath = require('./SplitterMath');
 
-module.exports = Splitter;
-
 /**
  * Main class that controls actions with splitters slider, 
  * place of the splitter
@@ -14,7 +12,7 @@ module.exports = Splitter;
 function Splitter(container) {
   var splitterMath,
     self = this,
-    upImg = container.querySelector('.upper-img-wrpr'),
+    upImg = container.querySelector('.upper-img'),
     imgsWidth = container.clientWidth,
     mouseMoveEvents = {},
     prevMovementPoint,
@@ -125,7 +123,7 @@ function Splitter(container) {
       document.body.addEventListener('mousemove', sliderMovementHandler);
     });
 
-    document.body.addEventListener('mouseup', function () {
+    document.addEventListener('mouseup', function () {
       document.body.removeEventListener('mousemove', sliderMovementHandler);
     });
   };
@@ -188,4 +186,12 @@ function Splitter(container) {
 
     prevMovementPoint = point;
   };
+}
+
+if (typeof exports !== 'undefined') {
+  if (typeof module !== 'undefined' && module.exports) {
+    module.exports = Splitter;
+  }
+} else {
+  window.Splitter = Splitter;
 }

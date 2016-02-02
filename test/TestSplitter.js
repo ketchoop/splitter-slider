@@ -23,8 +23,8 @@ describe('Splitter', function () {
     container.clientWidth = CONTAINER_WIDTH;
     upImg.clientWidth = CONTAINER_WIDTH;
 
-    upImg.classList.add('upper-img-wrpr');
-    lowImg.classList.add('lower-img-wrpr');
+    upImg.classList.add('upper-img');
+    lowImg.classList.add('lower-img');
 
     container.appendChild(lowImg);
     container.appendChild(upImg);

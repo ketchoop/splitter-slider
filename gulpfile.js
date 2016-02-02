@@ -87,7 +87,8 @@ gulp.task('watch', function () {
 
 function browserifyBundle() {
   var browerifyBundle = browserify(paths.js.from, {
-    debug: true
+    debug: true, 
+    standalone: 'Splitter'
   }).transform(babelify, {
     presets: ['es2015']
   });

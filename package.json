@@ -1,6 +1,6 @@
 {
   "name": "splitter-slider",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Slider that can controles width of two splitted images",
   "main": "./app/assets/js/Splitter.js",
   "scripts": {
