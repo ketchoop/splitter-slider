@@ -1,17 +1,18 @@
 language: node_js
 node_js:
-  - "stable"
-
+- stable
+env:
+  global:
+    secure: C2908iYYIBLMC7cYlwmhGq4Ojxpm9MiYzh9AV4j02HMCAEovDy++6oPfDQkQldA1Lgsl0AjxpU3nrrGTp8Y28tUtVnL2xTW0gceRDq+jUWj3jtyzcEobPy3XUHFJzkdo5LOXrmRO6iGofgxwLwJNLpBzxiop8hcqxmkKHvMZNmA2Eo8q65lcoWOQ1e4XWBdPsJP5nxAp6ZQEgjH7JtuKswb+XFJUA1siirQi0b+TNz2oylaZddhe+1DKGaeng1Kn0KKWKUDCbpEa1xiJUwKEVEbKMil3eRsSh1sm2S4NJx+18GhFQjsB1AcxdM2hMKJ5hz6maquodhBswWzldg7QyU+MWQF8L9ptyVWQBWBplSc1WOfZk3foVhPmIsV/MRAlwnbRuTb5+3YcNcfZ2iyil+YOL4R1wjOmZnAGV3X9q+3gFqyZEmttFUzvvzxCXt2e2BCo6ziaOHmw9kmHTANOUWXaA6LNueMdc+nlFXu9KRHbGarz1RKqFHCfvb1kz4G2+IgFrobgkHI/nTaKtWdltpcUIPqVCfSB1BONbDpNiNMyJYgQfQRrAjT4xq+THIygliTVCBxGzjuZUXCzKjE/eTc8dd+98SrI2g+09SvJg1kmJxG1cE+jLCURIIPp8su95mgtcAW1Hl/Kul0rE1KzOo2UG7WkaG8h3noLMC81eyY=
 before_script:
-  - npm install -g gulp
-
+- npm install -g gulp
 script:
-  - gulp build
+- gulp build
 after_success:
-  - npm run coveralls
-  - git checkout gh-pages docs
-  - eval "$(ssh-agent -s)"
-  - chmod 600 .travis/deploy_key.pem 
-  - ssh-add .travis/deploy_key.pem
-  - git remote add deploy https://github.com/ket4yii/Splitter-Slider.git 
-  - git push deploy gh-pages
+- npm run coveralls
+- git checkout gh-pages docs
+- eval "$(ssh-agent -s)"
+- chmod 600 .travis/deploy_key.pem
+- ssh-add .travis/deploy_key.pem
+- git remote add deploy https://ket4yii:${GH_TOKEN}@github.com/ket4yii/Splitter-Slider.git
+- git push deploy gh-pages
