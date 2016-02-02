@@ -9,12 +9,11 @@ before_script:
 script:
 - gulp build
 after_success:
-- git branch
-- git checkout gh-pages
-#- npm run coveralls
-#- git checkout gh-pages docs
-#- eval "$(ssh-agent -s)"
-#- chmod 600 .travis/deploy_key.pem
-#- ssh-add .travis/deploy_key.pem
-#- git remote add deploy https://ket4yii:${GH_TOKEN}@github.com/ket4yii/Splitter-Slider.git
-#et- git push deploy gh-pages
+- npm run coveralls
+- md ../for_deploy
+- cp docs ../for_deploy
+- cd ../for_deploy
+- git init
+- git remote add deploy https://ket4yii:${GH_TOKEN}@github.com/ket4yii/Splitter-Slider.git
+- git checkout gh-pages docs
+#- git push deploy gh-pages
