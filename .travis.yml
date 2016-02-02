@@ -13,6 +13,6 @@ after_success:
 - git config --global user.email "ket4yiit@gmail.com"
 - git config --global user.name "ket4yii"
 - git remote add deploy https://ket4yii:${GH_TOKEN}@github.com/ket4yii/Splitter-Slider.git
-- git checkout deploy/checkout
+- git checkout deploy/gh-pages
 - ls
 #- git push deploy gh-pages
