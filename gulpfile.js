@@ -20,7 +20,7 @@ var gulp = require('gulp'),
       to: './dist/'
     },
     js: {
-      folder: './app/assets/js/',
+      folder: './app/src/',
       mainfile: 'Splitter.js',
       from: './app/src/Splitter.js',
       to: './dist/'
