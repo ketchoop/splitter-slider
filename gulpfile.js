@@ -22,7 +22,7 @@ var gulp = require('gulp'),
     js: {
       folder: './app/assets/js/',
       mainfile: 'Splitter.js',
-      from: './app/assets/js/Splitter.js',
+      from: './app/src/Splitter.js',
       to: './dist/'
     }
   };

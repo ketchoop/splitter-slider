@@ -1,4 +1,4 @@
-var pathToJS = '../app/assets/js/',
+var pathToJS = '../app/src/',
   assert = require('chai').assert,
   sinon = require('sinon'),
   jsdomify = require('jsdomify').default,
