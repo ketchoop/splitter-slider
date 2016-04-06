@@ -3,7 +3,7 @@
 var SplitterMath = require('./SplitterMath');
 
 /**
- * Main class that controls actions with splitters slider, 
+ * Main class that controls actions with splitters slider,
  * place of the splitter
  * and more.
  * @constructor
@@ -50,7 +50,7 @@ function Splitter(container) {
 
     setSliderPosition(sliderPos);
   }
-  
+
   /**
    * Setting position of slider button
    * @inner
@@ -71,7 +71,7 @@ function Splitter(container) {
    */
   this.getSplitterPosition = function () {
     return upImg.clientWidth;
-  }
+  };
 
   /**
    * Setting position of slider and crop size of image to cordinate
@@ -125,7 +125,7 @@ function Splitter(container) {
   };
 
   /**
-   * Lazy initialization of splitter 
+   * Lazy initialization of splitter
    */
   this.init = function () {
     var sliderBtn;
@@ -152,8 +152,9 @@ function Splitter(container) {
 
   /**
    * Set point with its handler in hashmap
-   * 
-   * @param {Object} eventPoints Object of points and its handlers(callback) {point: callback}
+   *
+   * @param {Object} eventPoints Object of points and its handlers(callback)
+   * {point: callback}
    */
   this.setEventPoint = function (eventPoints) {
     for (var point in eventPoints) {
@@ -167,7 +168,7 @@ function Splitter(container) {
 
   /**
    * Run saved events for this point
-   * @param {String | Number} point Point for which call its events    
+   * @param {String | Number} point Point for which call its events
    */
   this.runEventsPoint = function (point) {
     var breakPoint;
@@ -197,4 +198,4 @@ function Splitter(container) {
 }
 
 module.exports = Splitter;
-  
+ 

@@ -7,7 +7,7 @@
  */
 function SplitterMath() {
   /**
-   * Calculate position of slider button which don't equal.
+   * Calculate position of slider button which don't equal
    * position of image
    * @param   {Number} cursorPos   Cursor position
    * @param   {Number} sliderWidth Slider width
@@ -21,9 +21,11 @@ function SplitterMath() {
 
   /**
    * Check that point is in a segment.
-   * @param   {Number} firstPointOfSegment  Cordinate of first point of a segment 
-   * @param   {Number} secondPointOfSegment Cordinate of second point of a segment
-   * @param   {Number} point                Cordinate of a point
+   * @param   {Number} firstPointOfSegment
+   * Cordinate of first point of a segment
+   * @param   {Number} secondPointOfSegment Cordinate of second point of
+   * a segment
+   * @param   {Number} point Cordinate of a point
    * @returns {Boolean} Point is in a segment (true -> yes; false -> no)
    */
   this.isInSegment = function (
