@@ -50,6 +50,28 @@ function Splitter(container) {
 
     setSliderPosition(sliderPos);
   }
+  
+  /**
+   * Setting position of slider button
+   * @inner
+   * @param {Number} pos Horizontal position of slider button
+   */
+  function setSliderPosition(pos) {
+    var sliderPos = splitterMath.calcSliderPosition(
+      pos,
+      self.sliderContainer.clientWidth
+    );
+
+    self.sliderContainer.style.left = sliderPos + 'px';
+  }
+
+  /**
+   * Get splitter position
+   * @returns {Number} Width of splitter(that equals to upper image width)
+   */
+  this.getSplitterPosition = function () {
+    return upImg.clientWidth;
+  }
 
   /**
    * Setting position of slider and crop size of image to cordinate
@@ -127,20 +149,6 @@ function Splitter(container) {
       document.body.removeEventListener('mousemove', sliderMovementHandler);
     });
   };
-
-  /**
-   * Setting position of slider button
-   * @inner
-   * @param {Number} pos Horizontal position of slider button
-   */
-  function setSliderPosition(pos) {
-    var sliderPos = splitterMath.calcSliderPosition(
-      pos,
-      self.sliderContainer.clientWidth
-    );
-
-    self.sliderContainer.style.left = sliderPos + 'px';
-  }
 
   /**
    * Set point with its handler in hashmap
