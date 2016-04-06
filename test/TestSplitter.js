@@ -10,9 +10,9 @@ jsdomify.create();
 
 describe('Splitter', function () {
   var splitter,
-      container,
-      upImg,
-      lowImg;
+    container,
+    upImg,
+    lowImg;
 
   before(function () {
     var CONTAINER_WIDTH = 100;
@@ -31,7 +31,7 @@ describe('Splitter', function () {
     container.appendChild(lowImg);
     container.appendChild(upImg);
   });
-  
+
   after(function () {
     jsdomify.destroy();
   });
@@ -164,58 +164,58 @@ describe('Splitter', function () {
 
     it('Upper image should have style.width property that equal to 20px', function () {
       var SPLITTER_POS = 20;
-      
+
       splitter.setSplitterPosition(SPLITTER_POS);
-      
+
       assert.strictEqual(SPLITTER_POS + 'px', upImg.style.width);
     });
 
     it('Upper image should have style.width property that equal to 100px, when splitter position larger than it width', function () {
       var SPLITTER_POS = 120;
-      
+
       splitter.setSplitterPosition(SPLITTER_POS);
-      
+
       assert.strictEqual('100px', upImg.style.width);
     });
-    
+
     it('Upper image should have style.width property that equal to 0px, when splitter position less 0px', function () {
-      
+
       var SPLITTER_POS = -120;
-      
+
       splitter.setSplitterPosition(SPLITTER_POS);
-      
+
       assert.strictEqual('0px', upImg.style.width);
     });
-    
+
     it('Spy should not called twice, when splitter position less 0px twice', function () {
       var SPLITTER_POS = -1000,
         eventCallbackSpy = sinon.spy();
-      
+
       splitter.setEventPoint({
         "0%": eventCallbackSpy
       });
-      
+
       splitter.setSplitterPosition(SPLITTER_POS);
       splitter.setSplitterPosition(SPLITTER_POS);
-      
+
       assert.isFalse(eventCallbackSpy.calledTwice);
     });
-    
+
     it('Spy should not called twice, when splitter position larger than it width', function () {
       var SPLITTER_POS = 500,
         eventCallbackSpy = sinon.spy();
-      
+
       splitter.setEventPoint({
         "0%": eventCallbackSpy
       });
-      
+
       splitter.setSplitterPosition(SPLITTER_POS);
       splitter.setSplitterPosition(SPLITTER_POS);
-      
+
       assert.isFalse(eventCallbackSpy.calledTwice);
     });
   });
-  
+
   describe('getSplitterPosition()', function () {
     it('Should return 20', function () {
       var SPLITTER_POS = 20,
