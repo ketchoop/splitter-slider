@@ -1,8 +1,5 @@
 .slider-wrpr {
-  position: absolute;
-  display: inline-block;
-  width: 100%;
-  height: 100%;
+  position: relative;
 }
 
 .upper-img, .lower-img {
@@ -13,11 +10,11 @@
   overflow: hidden;
 }
 
-.upper-img-wrpr {
+.upper-img {
   z-index: 20;
 }
 
-.lower-img-wrpr {
+.lower-img {
   z-index: 0;
 }
 
