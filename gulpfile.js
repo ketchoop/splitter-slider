@@ -35,8 +35,8 @@ gulp.task('css', function () {
 gulp.task('lint', function () {
   return gulp.src(`${paths.js.folder}*`)
     .pipe(jshint())
-    .pipe(jshint.reporter('jshint-stylish'))
-    .pipe(jshint.reporter('fail'));
+    .pipe(jshint.reporter('jshint-stylish'));
+    //.pipe(jshint.reporter('fail'));
 });
 
 gulp.task('jscpd', function () {
