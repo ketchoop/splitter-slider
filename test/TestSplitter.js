@@ -1,3 +1,5 @@
+'use strict'
+
 var pathToJS = '../app/src/',
   assert = require('chai').assert,
   sinon = require('sinon'),
@@ -211,6 +213,20 @@ describe('Splitter', function () {
       splitter.setSplitterPosition(SPLITTER_POS);
       
       assert.isFalse(eventCallbackSpy.calledTwice);
+    });
+  });
+  
+  describe('getSplitterPosition()', function () {
+    it('Should return 20', function () {
+      var SPLITTER_POS = 20,
+        curSplitterPos;
+
+      splitter.setSplitterPosition(SPLITTER_POS);
+
+      //Very dirty temporary hack (because JSDom couldn't work with clientWidth property)
+      curSplitterPos = parseInt(upImg.style.width.slice(0, -2)) || splitter.getSplitterPosition();
+
+      assert.strictEqual(20, curSplitterPos);
     });
   });
 });
