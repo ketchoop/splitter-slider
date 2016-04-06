@@ -16,9 +16,8 @@ function Splitter(container) {
     imgsWidth = container.clientWidth,
     mouseMoveEvents = {},
     prevMovementPoint,
-    isEdge = false;
-  /*upImgCord = upImg.getBoundingClientRect(),
-    cursorOffset,*/
+    isEdge = false,
+    containerCoords= container.getBoundingClientRect();
 
   /**
    * Create slider container with a button into.
@@ -67,21 +66,18 @@ function Splitter(container) {
 
   /**
    * Get splitter position
-   * @returns {Number} Width of splitter(that equals to upper image width)
+   * @returns {Number} Width of splitter
    */
   this.getSplitterPosition = function () {
-    return upImg.clientWidth;
+    return upImg.clientWidth + containerCoords.left;
   };
 
   /**
-   * Setting position of slider and crop size of image to cordinate
-   * @param {Number} cordX Horizontal position of splitter
+   * Setting position of slider and crop size of image to coordinate
+   * @param {Number} coordX Horizontal position of splitter
    */
-  this.setSplitterPosition = function (cordX) {
-    //No need(Maybe in a future)
-    //cursorOffset = (upImg.clientWidth - (cursorX - upImgCord.left));
-
-    var upImgWidth = cordX;
+  this.setSplitterPosition = function (coordX) {
+    var upImgWidth = coordX;
 
     //If the left edge
     if (upImgWidth < 0) {
@@ -128,7 +124,8 @@ function Splitter(container) {
    * Lazy initialization of splitter
    */
   this.init = function () {
-    var sliderBtn;
+    var sliderBtn,
+      cursorOffset;
 
     this.sliderContainer = createSliderContainer();
     sliderBtn = this.sliderContainer.querySelector('.slider-btn');
@@ -138,10 +135,17 @@ function Splitter(container) {
     initSliderPosition();
 
     function sliderMovementHandler(e) {
-      self.setSplitterPosition(e.clientX);
+      var splitterPos = e.pageX - containerCoords.left - cursorOffset;
+
+      console.log('cursor offset', cursorOffset);
+      console.log('SPLITTER POSITION', splitterPos);
+
+
+      self.setSplitterPosition(splitterPos);
     }
 
-    sliderBtn.addEventListener('mousedown', function () {
+    sliderBtn.addEventListener('mousedown', function (e) {
+      cursorOffset = e.pageX - (containerCoords.left + upImg.clientWidth); 
       document.body.addEventListener('mousemove', sliderMovementHandler);
     });
 
